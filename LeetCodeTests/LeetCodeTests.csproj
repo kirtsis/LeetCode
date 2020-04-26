@@ -74,6 +74,7 @@
     <Compile Include="00448. Find All Numbers Disappeared in an Array.cs" />
     <Compile Include="01143. Longest Common Subsequence.cs" />
     <Compile Include="01422. Maximum Score After Splitting a String.cs" />
+    <Compile Include="01423. Maximum Points You Can Obtain from Cards.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
