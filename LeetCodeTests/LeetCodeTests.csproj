@@ -76,6 +76,7 @@
     <Compile Include="01422. Maximum Score After Splitting a String.cs" />
     <Compile Include="01423. Maximum Points You Can Obtain from Cards.cs" />
     <Compile Include="01424. Diagonal Traverse II.cs" />
+    <Compile Include="00221. Maximal Square.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
