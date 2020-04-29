@@ -63,6 +63,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="00168. Excel Sheet Column Title.cs" />
+    <Compile Include="00239. Sliding Window Maximum.cs" />
     <Compile Include="01418. Display Table of Food Orders in a Restaurant.cs" />
     <Compile Include="00002. Add Two Numbers.cs" />
     <Compile Include="00169. Majority Element.cs" />
