@@ -89,6 +89,7 @@
     <Compile Include="00771. Jewels and Stones.cs" />
     <Compile Include="01429. First Unique Number.cs" />
     <Compile Include="01431. Kids With the Greatest Number of Candies.cs" />
+    <Compile Include="01432. Max Difference You Can Get From Changing an Integer.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
