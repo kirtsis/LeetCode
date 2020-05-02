@@ -86,6 +86,7 @@
     <Compile Include="00172. Factorial Trailing Zeroes.cs" />
     <Compile Include="00006. ZigZag Conversion.cs" />
     <Compile Include="00707. Design Linked List.cs" />
+    <Compile Include="00771. Jewels and Stones.cs" />
     <Compile Include="D0000124822. First Unique Number.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
