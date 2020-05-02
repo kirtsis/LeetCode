@@ -6,11 +6,11 @@ using NUnit.Framework;
 namespace LeetCodeTests {
 
     /// <summary>
-    ///     Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree
-    ///     (couldn't find it in Problems)
+    ///     1430. Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree
+    ///     https://leetcode.com/problems/check-if-a-string-is-a-valid-sequence-from-root-to-leaves-path-in-a-binary-tree/
     /// </summary>
     [TestFixture]
-    public class TestClass {
+    public class P01430 {
 
         [PublicAPI]
         public Boolean IsValidSequence(TreeNode root, Int32[] arr) {

@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -10,16 +11,14 @@ using NUnit.Framework;
 namespace LeetCodeTests {
 
     /// <summary>
-    ///     First Unique Number
-    ///     (couldn't find it in Problems)
-    ///     Bloomberg | First Unique Number in Data Stream
-    ///     https://leetcode.com/discuss/interview-question/algorithms/124822
+    ///     1429. First Unique Number
+    ///     https://leetcode.com/problems/first-unique-number/
     /// </summary>
     [TestFixture]
-    public class D0000124822 {
+    public class P01429 {
 
         [PublicAPI]
-        public class FirstUnique {
+        public class FirstUnique : IEnumerable<Int32> {
 
             private const Int32 Capacity = 100000; // (Problem Constraints: 1 <= nums.length <= 10^5)
 
@@ -38,7 +37,7 @@ namespace LeetCodeTests {
                 return this._unique.First?.Value ?? -1;
             }
 
-            public IEnumerable<Int32> Add(Int32 value) {
+            public void Add(Int32 value) {
                 // if we don't have any appearance of the value
                 if (!this._queueAppearances.ContainsKey(value)) {
                     // add the value into the queue with one appearance
@@ -61,53 +60,63 @@ namespace LeetCodeTests {
                         this._unique.Remove(node);
                     }
                 }
-                return this._queue;
             }
 
+            #region IEnumerable<Int32>
+
+            IEnumerator<Int32> IEnumerable<Int32>.GetEnumerator() {
+                return this._getEnumerator();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator() {
+                return this._getEnumerator();
+            }
+
+            private Queue<Int32>.Enumerator _getEnumerator() {
+                return this._queue.GetEnumerator();
+            }
+
+            #endregion
         }
 
         [Test]
         [TestCase("[\"FirstUnique\",\"showFirstUnique\",\"add\",\"showFirstUnique\",\"add\",\"showFirstUnique\",\"add\",\"showFirstUnique\"]", "[[[2,3,5]],[],[5],[],[2],[],[3],[]]", ExpectedResult = "[null,2,null,2,null,3,null,-1]")]
         [TestCase("[\"FirstUnique\",\"showFirstUnique\",\"add\",\"add\",\"add\",\"add\",\"add\",\"showFirstUnique\"]", "[[[7,7,7,7,7,7]],[],[7],[3],[3],[7],[17],[]]", ExpectedResult = "[null,-1,null,null,null,null,null,17]")]
         [TestCase("[\"FirstUnique\",\"showFirstUnique\",\"add\",\"showFirstUnique\"]", "[[[809]],[],[809],[]]", ExpectedResult = "[null,809,null,-1]")]
+        [SuppressMessage("ReSharper", "ArgumentsStyleOther")]
         public String Test(String input1, String input2) {
             var actions = JsonConvert.DeserializeObject<String[]>(input1);
             var parameters = JsonConvert.DeserializeObject<Object[][]>(input2);
 
             var result = new List<Int32?>();
+
             FirstUnique firstUnique = null;
             Console.WriteLine("FirstUnique firstUnique = null;");
             for (Int32 i = 0; i < actions.Length; i++) {
                 String action = actions[i];
                 switch (action) {
-                    case "FirstUnique": {
+                    case "FirstUnique":
                         Int32[] nums = ((JArray)parameters[i][0]).Select(o => (Int32)o).ToArray();
                         Console.WriteLine("firstUnique = new FirstUnique([{0}])", String.Join(",", nums));
                         firstUnique = new FirstUnique(nums);
                         result.Add(null);
                         break;
-                    }
 
-                    case "showFirstUnique": {
-                        Assert.That(firstUnique, Is.Not.Null);
-                        Debug.Assert(firstUnique != null, "firstUnique != null");
+                    case "showFirstUnique":
                         Console.Write("firstUnique.showFirstUnique()");
-                        Int32 value = firstUnique.ShowFirstUnique();
-                        Console.WriteLine("\t\t// return: {0}", value);
+                        Int32? value = firstUnique?.ShowFirstUnique();
+                        if (value != null) Console.WriteLine("\t\t// returns: {0}{1}", value, value == -1 ? " (not found)" : null);
+                        else Console.WriteLine();
                         result.Add(value);
                         break;
-                    }
 
-                    case "add": {
-                        Assert.That(firstUnique, Is.Not.Null);
-                        Debug.Assert(firstUnique != null, "firstUnique != null");
-                        Int32 value = (Int32)(Int64)parameters[i][0];
-                        Console.Write("firstUnique.add({0})", value);
-                        IEnumerable<Int32> queue = firstUnique.Add(value);
-                        Console.WriteLine("\t\t// the queue is now [{0}]", String.Join(",", queue));
+                    case "add":
+                        Console.Write("firstUnique.add({0})", (Int32)(Int64)parameters[i][0]);
+                        firstUnique?.Add(value: (Int32)(Int64)parameters[i][0]);
+                        if (firstUnique != null) Console.WriteLine("\t\t// the queue is [{0}]", String.Join(",", firstUnique));
+                        else Console.WriteLine();
                         result.Add(null);
                         break;
-                    }
                 }
             }
 

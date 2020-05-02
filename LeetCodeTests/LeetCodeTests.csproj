@@ -81,13 +81,13 @@
     <Compile Include="00171. Excel Sheet Column Number.cs" />
     <Compile Include="00124. Binary Tree Maximum Path Sum.cs" />
     <Compile Include="01425. Constrained Subset Sum.cs" />
-    <Compile Include="Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree.cs" />
+    <Compile Include="01430. Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree.cs" />
     <Compile Include="00480. Sliding Window Median.cs" />
     <Compile Include="00172. Factorial Trailing Zeroes.cs" />
     <Compile Include="00006. ZigZag Conversion.cs" />
     <Compile Include="00707. Design Linked List.cs" />
     <Compile Include="00771. Jewels and Stones.cs" />
-    <Compile Include="D0000124822. First Unique Number.cs" />
+    <Compile Include="01429. First Unique Number.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
