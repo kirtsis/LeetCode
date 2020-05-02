@@ -36,7 +36,6 @@ namespace LeetCodeTests {
             return result;
         }
 
-
         [Test]
         [TestCase("[2,4,3]", "[5,6,4]", ExpectedResult = "[7,0,8]")]
         public String Test(String input1, String input2) {

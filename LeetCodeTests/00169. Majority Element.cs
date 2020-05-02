@@ -20,17 +20,6 @@ namespace LeetCodeTests {
             return this._boyerMooreVotingAlgorithm(nums);
         }
 
-        private Int32 _boyerMooreVotingAlgorithm(Int32[] nums) {
-            Int32 count = 0;
-            Int32 candidate = -1;
-            foreach (Int32 num in nums) {
-                if (count == 0) candidate = num;
-                count += num == candidate ? 1 : -1;
-            }
-
-            return candidate;
-        }
-
         [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _hashMah(Int32[] nums) {
             Int32 limit = nums.Length / 2;
@@ -42,6 +31,17 @@ namespace LeetCodeTests {
             }
 
             return -1;
+        }
+
+        private Int32 _boyerMooreVotingAlgorithm(Int32[] nums) {
+            Int32 count = 0;
+            Int32 candidate = -1;
+            foreach (Int32 num in nums) {
+                if (count == 0) candidate = num;
+                count += num == candidate ? 1 : -1;
+            }
+
+            return candidate;
         }
 
         [Test]
