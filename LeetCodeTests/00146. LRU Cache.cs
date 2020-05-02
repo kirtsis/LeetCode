@@ -22,6 +22,8 @@ namespace LeetCodeTests {
             private readonly Dictionary<Int32, LinkedListNode<KeyValuePair<Int32, Int32>>> _memory;
             private readonly LinkedList<KeyValuePair<Int32, Int32>> _queue;
 
+            internal Int32? _lastEvictedKey;
+
             public LRUCache(Int32 capacity) {
                 this._capacity = capacity;
                 this._memory = new Dictionary<Int32, LinkedListNode<KeyValuePair<Int32, Int32>>>(capacity);
@@ -37,14 +39,14 @@ namespace LeetCodeTests {
                 return node.Value.Value;
             }
 
-            public KeyValuePair<Int32, Int32>? Put(Int32 key, Int32 value) {
-                KeyValuePair<Int32, Int32>? evicted = null;
+            public void Put(Int32 key, Int32 value) {
+                this._lastEvictedKey = null;
                 LinkedListNode<KeyValuePair<Int32, Int32>> node;
 
                 Boolean found = this._memory.TryGetValue(key, out node);
                 if (found) this._queue.Remove(node);
                 if (!found && (this._memory.Count == this._capacity)) {
-                    evicted = this._queue.Last.Value;
+                    this._lastEvictedKey = this._queue.Last.Value.Key;
                     this._memory.Remove(this._queue.Last.Value.Key);
                     this._queue.RemoveLast();
                 }
@@ -55,7 +57,6 @@ namespace LeetCodeTests {
 
                 this._queue.AddFirst(node);
                 this._memory[key] = node;
-                return evicted;
             }
 
         }
@@ -83,8 +84,8 @@ namespace LeetCodeTests {
 
                     case "put":
                         Console.Write("cache.Put({0}, {1})", parameters[i][0], parameters[i][1]);
-                        KeyValuePair<Int32, Int32>? evicted = cache?.Put(key: parameters[i][0], value: parameters[i][1]);
-                        if (evicted != null) Console.WriteLine("\t\t// evicts key {0}", evicted.Value.Key);
+                        cache?.Put(key: parameters[i][0], value: parameters[i][1]);
+                        if (cache?._lastEvictedKey != null) Console.WriteLine("\t\t// evicts key {0}", cache._lastEvictedKey);
                         else Console.WriteLine();
                         result.Add(null);
                         break;
