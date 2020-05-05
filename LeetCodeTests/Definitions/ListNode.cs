@@ -19,18 +19,26 @@ namespace LeetCodeTests {
             this.val = x;
         }
 
-        public static ListNode Make([NotNull] IEnumerable<Int32> values) {
+        public static ListNode Make([NotNull] IEnumerable<Int32> values, Int32 cyclePosition = -1) {
             if (values == null) throw new ArgumentNullException(nameof(values));
 
-            ListNode first = null;
-            foreach (Int32 value in values.Reverse()) {
-                var current = new ListNode(value) {
-                    next = first
+            Int32[] enumerable = values as Int32[] ?? values.ToArray();
+            Int32 length = enumerable.Length;
+
+            ListNode head = null;
+            ListNode tail = null;
+            for (Int32 index = length - 1; index >= 0; --index) {
+                var current = new ListNode(enumerable[index]) {
+                    next = head
                 };
-                first = current;
+                if (cyclePosition >= 0) {
+                    if (tail == null) tail = current;
+                    if (index == cyclePosition) tail.next = current;
+                }
+                head = current;
             }
 
-            return first;
+            return head;
         }
 
         public static IEnumerable<Int32> Make(ListNode node) {
