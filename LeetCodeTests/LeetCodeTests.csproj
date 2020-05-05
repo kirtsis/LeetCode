@@ -94,6 +94,7 @@
     <Compile Include="00383. Ransom Note.cs" />
     <Compile Include="00476. Number Complement.cs" />
     <Compile Include="01436. Destination City.cs" />
+    <Compile Include="00387. First Unique Character in a String.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
