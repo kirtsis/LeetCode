@@ -52,6 +52,23 @@ namespace LeetCodeTests {
             return result;
         }
 
+        public static Int32 FindIndex([NotNull] ListNode head, ListNode cycleStart) {
+            if (head == null) throw new ArgumentNullException(nameof(head));
+
+            if (cycleStart == null) return -1;
+
+            Int32 result = 0;
+            ListNode node = head;
+            while (node != null) {
+                if (node == cycleStart) return result;
+
+                node = node.next;
+                result++;
+            }
+
+            return -1;
+        }
+
     }
 
     [TestFixture]

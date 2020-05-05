@@ -98,6 +98,7 @@
     <Compile Include="01437. Check If All 1%27s Are at Least Length K Places Away.cs" />
     <Compile Include="01438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit.cs" />
     <Compile Include="00141. Linked List Cycle.cs" />
+    <Compile Include="00142. Linked List Cycle II.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
