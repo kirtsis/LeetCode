@@ -52,21 +52,33 @@ namespace LeetCodeTests {
             return result;
         }
 
-        public static Int32 FindIndex([NotNull] ListNode head, ListNode cycleStart) {
+        public static Int32 FindIndex([NotNull] ListNode head, ListNode node) {
             if (head == null) throw new ArgumentNullException(nameof(head));
 
-            if (cycleStart == null) return -1;
+            if (node == null) return -1;
 
             Int32 result = 0;
-            ListNode node = head;
-            while (node != null) {
-                if (node == cycleStart) return result;
+            ListNode current = head;
+            while (current != null) {
+                if (current == node) return result;
 
-                node = node.next;
+                current = current.next;
                 result++;
             }
 
             return -1;
+        }
+
+        public static void Concat([NotNull] ListNode first, [NotNull] ListNode second) {
+            if (first == null) throw new ArgumentNullException(nameof(first));
+            if (second == null) throw new ArgumentNullException(nameof(second));
+
+            ListNode tail = first;
+            while (tail.next != null) {
+                tail = tail.next;
+            }
+
+            tail.next = second;
         }
 
     }
