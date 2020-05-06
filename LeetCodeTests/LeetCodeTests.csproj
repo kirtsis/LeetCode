@@ -101,6 +101,7 @@
     <Compile Include="00142. Linked List Cycle II.cs" />
     <Compile Include="00160. Intersection of Two Linked Lists.cs" />
     <Compile Include="00019. Remove Nth Node From End of List.cs" />
+    <Compile Include="00206. Reverse Linked List.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\TreeNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
