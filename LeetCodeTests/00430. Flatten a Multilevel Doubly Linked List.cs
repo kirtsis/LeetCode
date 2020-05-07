@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using Node = LeetCodeTests.MultilevelDoublyLinkedListNode;
 
 namespace LeetCodeTests {
 

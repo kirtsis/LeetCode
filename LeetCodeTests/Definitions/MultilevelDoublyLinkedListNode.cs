@@ -12,18 +12,18 @@ namespace LeetCodeTests {
     [PublicAPI]
     [DebuggerDisplay("val = {val}")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public class Node {
+    public class MultilevelDoublyLinkedListNode {
 
-        public Node child;
-        public Node next;
-        public Node prev;
+        public MultilevelDoublyLinkedListNode child;
+        public MultilevelDoublyLinkedListNode next;
+        public MultilevelDoublyLinkedListNode prev;
         public Int32 val;
 
-        public Node(Int32 x) {
+        public MultilevelDoublyLinkedListNode(Int32 x) {
             this.val = x;
         }
 
-        public static Node Make([NotNull] IEnumerable<Int32?> values) {
+        public static MultilevelDoublyLinkedListNode Make([NotNull] IEnumerable<Int32?> values) {
             if (values == null) throw new ArgumentNullException(nameof(values));
 
             Int32?[] enumerable = values as Int32?[] ?? values.ToArray();
@@ -48,19 +48,19 @@ namespace LeetCodeTests {
                 if ((value != null) && newLevel) newLevel = false;
             }
 
-            Node head = null;
-            Node levelHead = null;
+            MultilevelDoublyLinkedListNode head = null;
+            MultilevelDoublyLinkedListNode levelHead = null;
             foreach (IList<Int32?> level in levels) {
-                Node parent = levelHead;
+                MultilevelDoublyLinkedListNode parent = levelHead;
                 levelHead = null;
-                Node previous = null;
+                MultilevelDoublyLinkedListNode previous = null;
                 foreach (Int32? value in level) {
                     if (value == null) {
                         parent = parent?.next;
                         continue;
                     }
 
-                    var current = new Node(value.Value) {
+                    var current = new MultilevelDoublyLinkedListNode(value.Value) {
                         prev = previous
                     };
                     if (previous != null) previous.next = current;
@@ -79,7 +79,7 @@ namespace LeetCodeTests {
             return head;
         }
 
-        public static IEnumerable<Int32?> Make(Node node) {
+        public static IEnumerable<Int32?> Make(MultilevelDoublyLinkedListNode node) {
             var levels = new List<IList<Int32?>>();
 
             Int32 indentation = 0;
@@ -87,7 +87,7 @@ namespace LeetCodeTests {
             while (node != null) {
                 currentLevel.Add(node.val);
                 if (node.child != null) {
-                    List<Int32?> childLevel = Node.Make(node.child).ToList();
+                    List<Int32?> childLevel = MultilevelDoublyLinkedListNode.Make(node.child).ToList();
                     childLevel.InsertRange(0, Enumerable.Repeat<Int32?>(null, indentation));
                     levels.Insert(0, childLevel);
                 }
@@ -120,10 +120,10 @@ namespace LeetCodeTests {
             var values = JsonConvert.DeserializeObject<Int32?[]>(input);
 
             // ACT
-            Node head = Node.Make(values);
+            MultilevelDoublyLinkedListNode head = MultilevelDoublyLinkedListNode.Make(values);
 
             // ASSERT
-            String output = JsonConvert.SerializeObject(Node.Make(head));
+            String output = JsonConvert.SerializeObject(MultilevelDoublyLinkedListNode.Make(head));
             Assert.That(output, Is.EqualTo(input));
         }
 
