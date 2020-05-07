@@ -12,6 +12,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01438 {
 
         [PublicAPI]
@@ -25,7 +26,6 @@ namespace LeetCodeTests {
             return this._linkedList(nums, limit);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _loops(Int32[] nums, Int32 limit) {
             Int32 result = 0;
             Int32 length = nums.Length;

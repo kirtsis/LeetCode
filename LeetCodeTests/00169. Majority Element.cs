@@ -12,6 +12,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/majority-element/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00169 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
             return this._boyerMooreVotingAlgorithm(nums);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _hashMah(Int32[] nums) {
             Int32 limit = nums.Length / 2;
             var appearances = new Dictionary<Int32, Int32>();

@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/linked-list-cycle/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00141 {
 
         [PublicAPI]
@@ -19,7 +20,6 @@ namespace LeetCodeTests {
             return this._twoPointers(head);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Boolean _flag(ListNode head) {
             var flag = new ListNode(0);
             ListNode node = head;

@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/zigzag-conversion/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00006 {
 
         [PublicAPI]
@@ -19,7 +20,6 @@ namespace LeetCodeTests {
             return this._steps(s, numRows);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private String _lines(String s, Int32 numRows) {
             if (s == null) return null;
             if (numRows <= 1) return s;

@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/maximal-square/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00221 {
 
         [PublicAPI]
@@ -19,7 +20,6 @@ namespace LeetCodeTests {
             return this._dp2(matrix);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _dp(Char[][] matrix) {
             if ((matrix == null) || (matrix.Length == 0)) return 0;
 

@@ -6,6 +6,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using Node = LeetCodeTests.TreeNode;
 
 namespace LeetCodeTests {
 
@@ -14,25 +15,25 @@ namespace LeetCodeTests {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class TreeNode {
 
-        public TreeNode left;
-        public TreeNode right;
+        public Node left;
+        public Node right;
         public Int32 val;
 
         public TreeNode(Int32 x) {
             this.val = x;
         }
 
-        public static TreeNode Make([NotNull] IEnumerable<Int32?> values) {
+        public static Node Make([NotNull] IEnumerable<Int32?> values) {
             if (values == null) throw new ArgumentNullException(nameof(values));
 
-            IEnumerable<TreeNode> nodes = values.Select(value => value != null ? new TreeNode(value.Value) : null).ToArray();
-            var queue = new Queue<TreeNode>(nodes);
+            IEnumerable<Node> nodes = values.Select(value => value != null ? new Node(value.Value) : null).ToArray();
+            var queue = new Queue<Node>(nodes);
             if (queue.Count <= 0) return null;
 
-            TreeNode root = queue.Dequeue();
+            Node root = queue.Dequeue();
             if (queue.Count <= 0) return root;
 
-            foreach (TreeNode node in nodes) {
+            foreach (Node node in nodes) {
                 if (node == null) continue;
 
                 node.left = queue.Dequeue();
@@ -45,13 +46,13 @@ namespace LeetCodeTests {
             return root;
         }
 
-        public static IEnumerable<Int32?> Make(TreeNode root) {
+        public static IEnumerable<Int32?> Make(Node root) {
             var result = new List<Int32?>();
 
-            var queue = new Queue<TreeNode>();
+            var queue = new Queue<Node>();
             queue.Enqueue(root);
             while (queue.Count != 0) {
-                TreeNode node = queue.Dequeue();
+                Node node = queue.Dequeue();
                 result.Add(node?.val);
                 if (node == null) continue;
 
@@ -82,13 +83,14 @@ namespace LeetCodeTests {
         [TestCase("[1,null,2]")]
         public void Test(String input) {
             // ARRANGE
-            var values = JsonConvert.DeserializeObject<Int32?[]>(input);
+            var valuesIn = JsonConvert.DeserializeObject<Int32?[]>(input);
 
             // ACT
-            TreeNode root = TreeNode.Make(values);
+            Node root = Node.Make(valuesIn);
+            IEnumerable<Int32?> valuesOut = Node.Make(root);
 
             // ASSERT
-            String output = JsonConvert.SerializeObject(TreeNode.Make(root));
+            String output = JsonConvert.SerializeObject(valuesOut);
             Assert.That(output, Is.EqualTo(input));
         }
 

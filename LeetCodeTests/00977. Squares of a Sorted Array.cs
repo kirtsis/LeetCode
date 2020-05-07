@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/squares-of-a-sorted-array/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00977 {
 
         [PublicAPI]
@@ -21,7 +22,6 @@ namespace LeetCodeTests {
             return this._inPlace(nums);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32[] _sort(Int32[] nums) {
             Int32 length = nums.Length;
             var result = new Int32[length];
@@ -33,7 +33,6 @@ namespace LeetCodeTests {
             return result;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32[] _twoPointer(Int32[] nums) {
             Int32 length = nums.Length;
             var result = new Int32[length];
@@ -54,7 +53,6 @@ namespace LeetCodeTests {
             return result;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32[] _inPlaceSort(Int32[] nums) {
             Int32 length = nums.Length;
             for (Int32 i = 0; i < length; i++) {

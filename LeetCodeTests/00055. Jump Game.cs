@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/jump-game/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00055 {
 
 #pragma warning disable 649
@@ -32,7 +33,6 @@ namespace LeetCodeTests {
             return this._jumpBackwards(nums, nums.Length - 1);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Boolean _jumpForwards(Int32[] nums, Int32 position) {
             Int32 lastPosition = nums.Length - 1;
             if (position == lastPosition) return true;
@@ -46,7 +46,6 @@ namespace LeetCodeTests {
             return false;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Boolean _jumpForwardsDP(Int32[] nums, Int32 position) {
             if (this._memory[position] != null) return this._memory[position].Value;
 
@@ -64,7 +63,6 @@ namespace LeetCodeTests {
             return false;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Boolean _dp(Int32[] nums) {
             Int32 lastPosition = nums.Length - 1;
             for (Int32 position = lastPosition - 1; position >= 0; position--) {

@@ -10,6 +10,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/longest-common-subsequence/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01143 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
         }
 
         [SuppressMessage("ReSharper", "ArgumentsStyleOther")]
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _recursive(String text1, String text2, Int32 length1, Int32 length2) {
             // if text1 or text2 have zero length, then there can be no common subsequence (return 0)
             if ((length1 == 0) || (length2 == 0)) return 0;
@@ -35,7 +35,6 @@ namespace LeetCodeTests {
             );
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _dp(String text1, String text2) {
             Int32 length1 = text1.Length;
             Int32 length2 = text2.Length;

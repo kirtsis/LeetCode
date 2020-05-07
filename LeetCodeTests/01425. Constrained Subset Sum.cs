@@ -12,6 +12,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/constrained-subset-sum/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01425 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
             return this._linkedList(nums, k);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _loops(Int32[] nums, Int32 k) {
             Int32 length = nums.Length;
 

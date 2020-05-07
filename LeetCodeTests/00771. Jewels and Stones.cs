@@ -13,6 +13,7 @@ namespace LeetCodeTests {
     /// </summary>
     [TestFixture]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00771 {
 
         [PublicAPI]
@@ -25,7 +26,6 @@ namespace LeetCodeTests {
             return this._array(J, S);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _loops(String J, String S) {
             if ((J == null) || (J.Length == 0)) return 0;
             if ((S == null) || (S.Length == 0)) return 0;
@@ -40,7 +40,6 @@ namespace LeetCodeTests {
             return result;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _linqJoin(String J, String S) {
             if ((J == null) || (J.Length == 0)) return 0;
             if ((S == null) || (S.Length == 0)) return 0;
@@ -57,7 +56,6 @@ namespace LeetCodeTests {
             return S.Join(J, stone => stone, jewel => jewel, (stone, jewel) => jewel).Count();
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _linqCount(String J, String S) {
             if ((J == null) || (J.Length == 0)) return 0;
             if ((S == null) || (S.Length == 0)) return 0;
@@ -65,7 +63,6 @@ namespace LeetCodeTests {
             return S.Count(stone => J.Any(jewel => stone == jewel));
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _hashSet(String J, String S) {
             if ((J == null) || (J.Length == 0)) return 0;
             if ((S == null) || (S.Length == 0)) return 0;
@@ -79,7 +76,6 @@ namespace LeetCodeTests {
             return result;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _hashSetLinq(String J, String S) {
             if ((J == null) || (J.Length == 0)) return 0;
             if ((S == null) || (S.Length == 0)) return 0;

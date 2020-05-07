@@ -10,6 +10,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/factorial-trailing-zeroes/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00172 {
 
         [PublicAPI]
@@ -18,7 +19,6 @@ namespace LeetCodeTests {
             return this._division(n);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _divisor(Int32 n) {
             Int32 result = 0;
             Int64 divisor = 5;

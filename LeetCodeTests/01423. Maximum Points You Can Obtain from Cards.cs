@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01423 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
             return this._maxScore3(cardPoints, k);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _maxScore1(Int32[] cardPoints, Int32 k) {
             Int32 length = cardPoints.Length;
 
@@ -42,7 +42,6 @@ namespace LeetCodeTests {
             return score;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _maxScore2(Int32[] cardPoints, Int32 k) {
             Int32 length = cardPoints.Length;
 

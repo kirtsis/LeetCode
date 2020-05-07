@@ -12,6 +12,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/sliding-window-median/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00480 {
 
         [PublicAPI]
@@ -21,7 +22,6 @@ namespace LeetCodeTests {
             return this._list(nums, k);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Double[] _loops(Int32[] nums, Int32 k) {
             if (nums == null) return new Double[0];
 
@@ -89,7 +89,6 @@ namespace LeetCodeTests {
             return mergedArray;
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Double[] _sortedList(Int32[] nums, Int32 k) {
             if (nums == null) return new Double[0];
 

@@ -12,6 +12,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/sliding-window-maximum/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00239 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
             return this._linkedList(nums, k);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32[] _twoPointers(Int32[] nums, Int32 k) {
             // Problem Constraints: 1 <= k <= nums.length
             if (k == 1) return nums;

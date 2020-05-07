@@ -11,6 +11,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/reverse-linked-list/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00206 {
 
         [PublicAPI]
@@ -19,7 +20,6 @@ namespace LeetCodeTests {
             return this._iteratively(head);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private ListNode _recursively(ListNode head, ListNode current) {
             if (current?.next == null) return head;
 

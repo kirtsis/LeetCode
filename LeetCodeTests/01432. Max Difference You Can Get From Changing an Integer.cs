@@ -10,6 +10,7 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01432 {
 
         [PublicAPI]
@@ -20,7 +21,6 @@ namespace LeetCodeTests {
             return this._asString2(num);
         }
 
-        [SuppressMessage("ReSharper", "UnusedMember.Local")]
         private Int32 _asString(Int32 num) {
             String number = Convert.ToString(num);
 
