@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using JetBrains.Annotations;
@@ -9,6 +10,7 @@ using NUnit.Framework;
 namespace LeetCodeTests {
 
     [PublicAPI]
+    [DebuggerDisplay("val = {val}")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class TreeNode {
 
