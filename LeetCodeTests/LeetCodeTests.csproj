@@ -109,6 +109,7 @@
     <Compile Include="00021. Merge Two Sorted Lists.cs" />
     <Compile Include="00430. Flatten a Multilevel Doubly Linked List.cs" />
     <Compile Include="00993. Cousins in Binary Tree.cs" />
+    <Compile Include="00061. Rotate List.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
