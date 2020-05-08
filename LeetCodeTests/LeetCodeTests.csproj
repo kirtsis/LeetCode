@@ -111,6 +111,7 @@
     <Compile Include="00993. Cousins in Binary Tree.cs" />
     <Compile Include="00061. Rotate List.cs" />
     <Compile Include="01232. Check If It Is a Straight Line.cs" />
+    <Compile Include="01439. Find the Kth Smallest Sum of a Matrix With Sorted Rows.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
