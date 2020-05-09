@@ -15,25 +15,16 @@ namespace LeetCodeTests {
 
         [PublicAPI]
         public Boolean IsPerfectSquare(Int32 num) {
-            //return this._calc(num);
+            //return this._digitByDigitCalculation(num);
+            //return this._newtonRaphsonMethod(num);
             return this._binarySearch(num);
         }
 
-        private Boolean _calc(Int32 num) {
-            // Given a positive integer num, write a function which returns True if num is a perfect square else False.
-            // Note: Do not use any built-in library function such as sqrt.
-
+        private Boolean _digitByDigitCalculation(Int32 num) {
             if (num <= 0) return false;
 
-            //Double sqrt = Math.Sqrt(num);
-            //Int32 approximation = (Int32)Math.Truncate(sqrt);
-            //Int32 approximation = (Int32)Math.Sqrt(num);
-            Int32 approximation = this._sqrt(num);
-            return approximation * approximation == num;
-        }
-
-        private Int32 _sqrt(Int32 number) {
-            Int32 result = 0;
+            Int32 number = num;
+            Int32 approximation = 0;
 
             Int32 bit = 1 << 30;
             while (bit > number) {
@@ -41,21 +32,29 @@ namespace LeetCodeTests {
             }
 
             while (bit != 0) {
-                if (number >= result + bit) {
-                    number -= result + bit;
-                    result = (result >> 1) + bit;
-                } else result >>= 1;
+                if (number >= approximation + bit) {
+                    number -= approximation + bit;
+                    approximation = (approximation >> 1) + bit;
+                } else approximation >>= 1;
 
                 bit >>= 2;
             }
 
-            return result;
+            return approximation * approximation == num;
+        }
+
+        private Boolean _newtonRaphsonMethod(Int32 num) {
+            if (num <= 0) return false;
+
+            Int32 approximation = num;
+            while (approximation > num / approximation) {
+                approximation = (approximation + num / approximation) >> 1;
+            }
+
+            return approximation * approximation == num;
         }
 
         private Boolean _binarySearch(Int32 num) {
-            // Given a positive integer num, write a function which returns True if num is a perfect square else False.
-            // Note: Do not use any built-in library function such as sqrt.
-
             if (num <= 0) return false;
 
             Int32 left = 1;
