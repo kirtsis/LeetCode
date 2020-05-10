@@ -113,6 +113,7 @@
     <Compile Include="01232. Check If It Is a Straight Line.cs" />
     <Compile Include="01439. Find the Kth Smallest Sum of a Matrix With Sorted Rows.cs" />
     <Compile Include="00367. Valid Perfect Square.cs" />
+    <Compile Include="00997. Find the Town Judge.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
