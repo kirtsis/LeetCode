@@ -32,7 +32,6 @@ namespace LeetCodeTests {
             return count;
         }
 
-
         [Test]
         [TestCase(10, ExpectedResult = 4)]
         [TestCase(100, ExpectedResult = 25)]
