@@ -119,6 +119,7 @@
     <Compile Include="00189. Rotate Array.cs" />
     <Compile Include="00200. Number of Islands.cs" />
     <Compile Include="00008. String to Integer %28atoi%29.cs" />
+    <Compile Include="00198. House Robber.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
