@@ -115,6 +115,7 @@
     <Compile Include="00367. Valid Perfect Square.cs" />
     <Compile Include="00997. Find the Town Judge.cs" />
     <Compile Include="01441. Build an Array With Stack Operations.cs" />
+    <Compile Include="00189. Rotate Array.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
