@@ -130,6 +130,7 @@
     <Compile Include="00191. Number of 1 Bits.cs" />
     <Compile Include="00205. Isomorphic Strings.cs" />
     <Compile Include="00217. Contains Duplicate.cs" />
+    <Compile Include="00219. Contains Duplicate II.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
