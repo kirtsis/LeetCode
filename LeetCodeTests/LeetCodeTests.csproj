@@ -127,6 +127,7 @@
     <Compile Include="00204. Count Primes.cs" />
     <Compile Include="00190. Reverse Bits.cs" />
     <Compile Include="00540. Single Element in a Sorted Array.cs" />
+    <Compile Include="00191. Number of 1 Bits.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
