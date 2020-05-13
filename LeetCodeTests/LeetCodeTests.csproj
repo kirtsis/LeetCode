@@ -134,6 +134,7 @@
     <Compile Include="00225. Implement Stack using Queues.cs" />
     <Compile Include="00402. Remove K Digits.cs" />
     <Compile Include="00724. Find Pivot Index.cs" />
+    <Compile Include="00747. Largest Number At Least Twice of Others.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
