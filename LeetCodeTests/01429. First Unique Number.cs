@@ -97,13 +97,13 @@ namespace LeetCodeTests {
                 switch (action) {
                     case "FirstUnique":
                         Int32[] nums = ((JArray)parameters[i][0]).Select(o => (Int32)o).ToArray();
-                        Console.WriteLine("firstUnique = new FirstUnique([{0}])", String.Join(",", nums));
+                        Console.WriteLine("firstUnique = new FirstUnique([{0}]);", String.Join(",", nums));
                         firstUnique = new FirstUnique(nums);
                         result.Add(null);
                         break;
 
                     case "showFirstUnique":
-                        Console.Write("firstUnique.showFirstUnique()");
+                        Console.Write("firstUnique.showFirstUnique();");
                         Int32? value = firstUnique?.ShowFirstUnique();
                         if (value != null) Console.WriteLine("\t\t// returns: {0}{1}", value, value == -1 ? " (not found)" : null);
                         else Console.WriteLine();
@@ -111,7 +111,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "add":
-                        Console.Write("firstUnique.add({0})", (Int32)(Int64)parameters[i][0]);
+                        Console.Write("firstUnique.add({0});", (Int32)(Int64)parameters[i][0]);
                         firstUnique?.Add(value: (Int32)(Int64)parameters[i][0]);
                         if (firstUnique != null) Console.WriteLine("\t\t// the queue is [{0}]", String.Join(",", firstUnique));
                         else Console.WriteLine();
