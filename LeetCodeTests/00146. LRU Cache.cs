@@ -77,13 +77,13 @@ namespace LeetCodeTests {
                 String action = actions[i];
                 switch (action) {
                     case "LRUCache":
-                        Console.WriteLine("cache = new LRUCache(capacity: {0})", parameters[i][0]);
+                        Console.WriteLine("cache = new LRUCache(capacity: {0});", parameters[i][0]);
                         cache = new LRUCache(capacity: parameters[i][0]);
                         result.Add(null);
                         break;
 
                     case "put":
-                        Console.Write("cache.Put({0}, {1})", parameters[i][0], parameters[i][1]);
+                        Console.Write("cache.Put({0}, {1});", parameters[i][0], parameters[i][1]);
                         cache?.Put(key: parameters[i][0], value: parameters[i][1]);
                         if (cache?._lastEvictedKey != null) Console.WriteLine("\t\t// evicts key {0}", cache._lastEvictedKey);
                         else Console.WriteLine();
@@ -91,7 +91,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "get":
-                        Console.Write("cache.Get({0})", parameters[i][0]);
+                        Console.Write("cache.Get({0});", parameters[i][0]);
                         Int32? value = cache?.Get(key: parameters[i][0]);
                         if (value != null) Console.WriteLine("\t\t// returns: {0}{1}", value, value == -1 ? " (not found)" : null);
                         else Console.WriteLine();
