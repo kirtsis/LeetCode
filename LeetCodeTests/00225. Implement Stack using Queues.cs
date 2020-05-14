@@ -71,7 +71,7 @@ namespace LeetCodeTests {
         [SuppressMessage("ReSharper", "ArgumentsStyleOther")]
         public String Test(String input1, String input2) {
             var actions = JsonConvert.DeserializeObject<String[]>(input1);
-            var parameters = JsonConvert.DeserializeObject<Object[][]>(input2);
+            var parameters = JsonConvert.DeserializeObject<Int32[][]>(input2);
 
             var result = new List<Object>();
 
@@ -87,15 +87,15 @@ namespace LeetCodeTests {
                         break;
 
                     case "push":
-                        Console.Write("stack.push({0})", (Int32)(Int64)parameters[i][0]);
-                        stack?.Push(x: (Int32)(Int64)parameters[i][0]);
+                        Console.Write("stack.push({0});", parameters[i][0]);
+                        stack?.Push(x: parameters[i][0]);
                         if (stack != null) Console.WriteLine("\t\t// the stack is [{0}] <- top", String.Join(",", stack));
                         else Console.WriteLine();
                         result.Add(null);
                         break;
 
                     case "pop":
-                        Console.Write("stack.Pop()");
+                        Console.Write("stack.Pop();");
                         Int32? pop = stack?.Pop();
                         if (pop != null) Console.Write("\t\t// returns: {0}", pop);
                         if (stack != null) Console.WriteLine(" - the stack is [{0}] <- top", String.Join(",", stack));
@@ -104,7 +104,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "top":
-                        Console.Write("stack.Top()");
+                        Console.Write("stack.Top();");
                         Int32? top = stack?.Top();
                         if (top != null) Console.WriteLine("\t\t// returns: {0}", top);
                         else Console.WriteLine();
@@ -112,7 +112,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "empty":
-                        Console.Write("stack.Empty()");
+                        Console.Write("stack.Empty();");
                         Boolean? empty = stack?.Empty();
                         if (empty != null) Console.WriteLine("\t\t// returns: {0}", empty);
                         else Console.WriteLine();
