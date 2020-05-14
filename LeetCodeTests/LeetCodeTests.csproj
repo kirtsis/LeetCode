@@ -137,6 +137,7 @@
     <Compile Include="00724. Find Pivot Index.cs" />
     <Compile Include="00747. Largest Number At Least Twice of Others.cs" />
     <Compile Include="00498. Diagonal Traverse.cs" />
+    <Compile Include="00208. Implement Trie %28Prefix Tree%29.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
