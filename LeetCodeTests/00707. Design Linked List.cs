@@ -197,13 +197,13 @@ namespace LeetCodeTests {
                 String action = actions[i];
                 switch (action) {
                     case "MyLinkedList":
-                        Console.WriteLine("linkedList = new MyLinkedList() // Initialize empty LinkedList");
+                        Console.WriteLine("linkedList = new MyLinkedList(); // Initialize empty LinkedList");
                         linkedList = new MyLinkedList();
                         result.Add(null);
                         break;
 
                     case "get":
-                        Console.Write("linkedList.Get({0})", parameters[i][0]);
+                        Console.Write("linkedList.Get({0});", parameters[i][0]);
                         Int32? value = linkedList?.Get(index: parameters[i][0]);
                         if (value != null) Console.WriteLine("\t\t// returns: {0}{1}", value, value == -1 ? " (not found)" : null);
                         else Console.WriteLine();
@@ -211,7 +211,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "addAtHead":
-                        Console.Write("linkedList.AddAtHead({0})", parameters[i][0]);
+                        Console.Write("linkedList.AddAtHead({0});", parameters[i][0]);
                         linkedList?.AddAtHead(val: parameters[i][0]);
                         if (linkedList != null) Console.WriteLine("\t\t// the linked list is {0}", String.Join("->", linkedList));
                         else Console.WriteLine();
@@ -219,7 +219,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "addAtTail":
-                        Console.Write("linkedList.AddAtTail({0})", parameters[i][0]);
+                        Console.Write("linkedList.AddAtTail({0});", parameters[i][0]);
                         linkedList?.AddAtTail(val: parameters[i][0]);
                         if (linkedList != null) Console.WriteLine("\t\t// the linked list is {0}", String.Join("->", linkedList));
                         else Console.WriteLine();
@@ -227,7 +227,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "addAtIndex":
-                        Console.Write("linkedList.AddAtIndex({0}, {1})", parameters[i][0], parameters[i][1]);
+                        Console.Write("linkedList.AddAtIndex({0}, {1});", parameters[i][0], parameters[i][1]);
                         linkedList?.AddAtIndex(index: parameters[i][0], val: parameters[i][1]);
                         if (linkedList != null) Console.WriteLine("\t\t// the linked list is {0}", String.Join("->", linkedList));
                         else Console.WriteLine();
@@ -235,7 +235,7 @@ namespace LeetCodeTests {
                         break;
 
                     case "deleteAtIndex":
-                        Console.Write("linkedList.DeleteAtIndex({0})", parameters[i][0]);
+                        Console.Write("linkedList.DeleteAtIndex({0});", parameters[i][0]);
                         linkedList?.DeleteAtIndex(index: parameters[i][0]);
                         if (linkedList != null) Console.WriteLine("\t\t// the linked list is {0}", String.Join("->", linkedList));
                         else Console.WriteLine();
