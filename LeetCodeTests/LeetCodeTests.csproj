@@ -76,6 +76,7 @@
     <Compile Include="00561. Array Partition I.cs" />
     <Compile Include="00733. Flood Fill.cs" />
     <Compile Include="00918. Maximum Sum Circular Subarray.cs" />
+    <Compile Include="01037. Valid Boomerang.cs" />
     <Compile Include="01418. Display Table of Food Orders in a Restaurant.cs" />
     <Compile Include="00002. Add Two Numbers.cs" />
     <Compile Include="00169. Majority Element.cs" />
