@@ -72,6 +72,7 @@
     <Compile Include="00168. Excel Sheet Column Title.cs" />
     <Compile Include="00209. Minimum Size Subarray Sum.cs" />
     <Compile Include="00239. Sliding Window Maximum.cs" />
+    <Compile Include="00557. Reverse Words in a String III.cs" />
     <Compile Include="00561. Array Partition I.cs" />
     <Compile Include="00733. Flood Fill.cs" />
     <Compile Include="00918. Maximum Sum Circular Subarray.cs" />
