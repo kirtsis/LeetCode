@@ -13,6 +13,7 @@ namespace LeetCodeTests {
     /// </summary>
     [TestFixture]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P00918 {
 
         [PublicAPI]
@@ -22,20 +23,42 @@ namespace LeetCodeTests {
             // * 1 <= A.length <= 30000
 
             Int32 length = A.Length;
-            Int32 maxInMiddle = this._kadanesAlgorithm(A, length);
-            Int32 maxSplitAcross = A.Sum() + this._kadanesAlgorithm(A, length, -1);
+
+            //return this._max1(A, length);
+            return this._max2(A, length);
+        }
+
+        private Int32 _max1(Int32[] nums, Int32 length) {
+            Int32 maxInMiddle = this._kadane(nums, length);
+            Int32 maxSplitAcross = nums.Sum() + this._kadane(nums, length, -1);
             return maxSplitAcross == 0 ? maxInMiddle : Math.Max(maxInMiddle, maxSplitAcross);
         }
 
-        private Int32 _kadanesAlgorithm(Int32[] nums, Int32 length, Int32 sign = 1) {
+        private Int32 _kadane(Int32[] nums, Int32 length, Int32 sign = 1) {
             Int32 currentSum = 0;
-            Int32 bestSum = Int32.MinValue;
+            Int32 bestSum = -30000;
             for (Int32 index = 0; index < length; ++index) {
                 currentSum = sign * nums[index] + Math.Max(0, currentSum);
                 bestSum = Math.Max(bestSum, currentSum);
             }
 
             return bestSum;
+        }
+
+        private Int32 _max2(Int32[] nums, Int32 length) {
+            Int32 total = 0;
+            Int32 curMax = 0, maxSum = -30000;
+            Int32 curMin = 0, minSum = 30000;
+            for (Int32 index = 0; index < length; ++index) {
+                Int32 num = nums[index];
+                total += num;
+                curMax = num + Math.Max(0, curMax);
+                maxSum = Math.Max(maxSum, curMax);
+                curMin = num + Math.Min(0, curMin);
+                minSum = Math.Min(minSum, curMin);
+            }
+
+            return total == minSum ? maxSum : Math.Max(maxSum, total - minSum);
         }
 
         [Test]
