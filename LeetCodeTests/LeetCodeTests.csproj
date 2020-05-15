@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="00066. Plus One.cs" />
     <Compile Include="00138. Copy List with Random Pointer.cs" />
+    <Compile Include="00151. Reverse Words in a String.cs" />
     <Compile Include="00168. Excel Sheet Column Title.cs" />
     <Compile Include="00209. Minimum Size Subarray Sum.cs" />
     <Compile Include="00239. Sliding Window Maximum.cs" />
