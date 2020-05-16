@@ -148,6 +148,7 @@
     <Compile Include="00208. Implement Trie %28Prefix Tree%29.cs" />
     <Compile Include="00054. Spiral Matrix.cs" />
     <Compile Include="00118. Pascal%27s Triangle.cs" />
+    <Compile Include="01448. Count Good Nodes in Binary Tree.cs" />
     <Compile Include="Definitions\ListNode.cs" />
     <Compile Include="Definitions\MultilevelDoublyLinkedListNode.cs" />
     <Compile Include="Definitions\RandomListNode.cs" />
