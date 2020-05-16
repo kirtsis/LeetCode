@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using NUnit.Framework;
@@ -11,29 +12,54 @@ namespace LeetCodeTests {
     ///     https://leetcode.com/problems/simplified-fractions/
     /// </summary>
     [TestFixture]
+    [SuppressMessage("ReSharper", "UnusedMember.Local")]
     public class P01447 {
 
         [PublicAPI]
         public IList<String> SimplifiedFractions(Int32 n) {
-            // Given an integer n, return a list of all simplified fractions between 0 and 1 (exclusive) such that the denominator is less-than-or-equal-to n. The fractions can be in any order.
-            //
             // Constraints:
             // * 1 <= n <= 100
 
+            //return this._fractions1(n);
+            return this._fractions2(n);
+        }
+
+        private IList<String> _fractions1(Int32 n) {
             var result = new List<String>();
 
             var set = new HashSet<Decimal>();
-            for (Decimal numerator = 1; numerator <= n; ++numerator) {
-                for (Decimal denominator = 1; denominator <= n; ++denominator) {
-                    Decimal fraction = numerator / denominator;
-                    if (fraction >= 1) continue;
-                    if (!set.Add(numerator / denominator)) continue;
+            for (Int32 numerator = 1; numerator <= n; ++numerator) {
+                for (Int32 denominator = numerator + 1; denominator <= n; ++denominator) {
+                    if (!set.Add(numerator / (Decimal)denominator)) continue;
 
                     result.Add($"{numerator}/{denominator}");
                 }
             }
 
             return result;
+        }
+
+        private IList<String> _fractions2(Int32 n) {
+            var result = new List<String>();
+
+            for (Int32 numerator = 1; numerator <= n; ++numerator) {
+                for (Int32 denominator = numerator + 1; denominator <= n; ++denominator) {
+                    if (this._gcd(numerator, denominator) != 1) continue;
+
+                    result.Add($"{numerator}/{denominator}");
+                }
+            }
+
+            return result;
+        }
+
+        private Int32 _gcd(Int32 a, Int32 b) {
+            while ((a != 0) && (b != 0)) {
+                if (a > b) a %= b;
+                else b %= a;
+            }
+
+            return a == 0 ? b : a;
         }
 
         [Test]
