@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="00066. Plus One.cs" />
+    <Compile Include="01446. Consecutive Characters.cs" />
     <Compile Include="00138. Copy List with Random Pointer.cs" />
     <Compile Include="00151. Reverse Words in a String.cs" />
     <Compile Include="00168. Excel Sheet Column Title.cs" />
