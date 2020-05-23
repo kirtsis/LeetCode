@@ -69,6 +69,7 @@
     <Compile Include="00066. Plus One.cs" />
     <Compile Include="00438. Find All Anagrams in a String.cs" />
     <Compile Include="00567. Permutation in String.cs" />
+    <Compile Include="00986. Interval List Intersections.cs" />
     <Compile Include="01449. Form Largest Integer With Digits That Add up to Target.cs" />
     <Compile Include="01447. Simplified Fractions.cs" />
     <Compile Include="01446. Consecutive Characters.cs" />
