@@ -69,6 +69,7 @@
     <Compile Include="00066. Plus One.cs" />
     <Compile Include="00230. Kth Smallest Element in a BST.cs" />
     <Compile Include="00438. Find All Anagrams in a String.cs" />
+    <Compile Include="00451. Sort Characters By Frequency.cs" />
     <Compile Include="00567. Permutation in String.cs" />
     <Compile Include="00901. Online Stock Span.cs" />
     <Compile Include="00986. Interval List Intersections.cs" />
