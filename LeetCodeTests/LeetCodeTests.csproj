@@ -72,6 +72,7 @@
     <Compile Include="00451. Sort Characters By Frequency.cs" />
     <Compile Include="00525. Contiguous Array.cs" />
     <Compile Include="00567. Permutation in String.cs" />
+    <Compile Include="00886. Possible Bipartition.cs" />
     <Compile Include="00901. Online Stock Span.cs" />
     <Compile Include="00986. Interval List Intersections.cs" />
     <Compile Include="01008. Construct Binary Search Tree from Preorder Traversal.cs" />
