@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="00066. Plus One.cs" />
+    <Compile Include="00207. Course Schedule.cs" />
     <Compile Include="00230. Kth Smallest Element in a BST.cs" />
     <Compile Include="00338. Counting Bits.cs" />
     <Compile Include="00438. Find All Anagrams in a String.cs" />
