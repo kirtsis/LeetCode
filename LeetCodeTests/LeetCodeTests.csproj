@@ -76,6 +76,7 @@
     <Compile Include="00567. Permutation in String.cs" />
     <Compile Include="00886. Possible Bipartition.cs" />
     <Compile Include="00901. Online Stock Span.cs" />
+    <Compile Include="00973. K Closest Points to Origin.cs" />
     <Compile Include="00986. Interval List Intersections.cs" />
     <Compile Include="01008. Construct Binary Search Tree from Preorder Traversal.cs" />
     <Compile Include="01035. Uncrossed Lines.cs" />
