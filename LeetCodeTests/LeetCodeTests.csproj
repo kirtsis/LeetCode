@@ -80,6 +80,7 @@
     <Compile Include="00973. K Closest Points to Origin.cs" />
     <Compile Include="00986. Interval List Intersections.cs" />
     <Compile Include="01008. Construct Binary Search Tree from Preorder Traversal.cs" />
+    <Compile Include="01029. Two City Scheduling.cs" />
     <Compile Include="01035. Uncrossed Lines.cs" />
     <Compile Include="01277. Count Square Submatrices with All Ones.cs" />
     <Compile Include="01449. Form Largest Integer With Digits That Add up to Target.cs" />
